@@ -26,6 +26,7 @@ def generateMsg(birds, homeAddress=""):
                 <th scope="col" style="border: 1px solid #0A0A0A;">Location</th>
                 <th scope="col" style="border: 1px solid #0A0A0A;">Coords</th>
                 <th scope="col" style="border: 1px solid #0A0A0A;">Private Location</th>
+                <th scope="col" style="border: 1px solid #0A0A0A;">Valid Observation</th>
                 <th scope="col" style="border: 1px solid #0A0A0A;">eBird Checklist URL</th>
                 <th scope="col" style="border: 1px solid #0A0A0A;">Directions</th>
                 </tr>
@@ -41,6 +42,7 @@ def generateMsg(birds, homeAddress=""):
                 <td style="border: 1px solid #0A0A0A;">{sighting['locName']}</td>
                 <td style="border: 1px solid #0A0A0A;">{sighting['coords'][0]}, {sighting['coords'][1]}</td>
                 <td style="border: 1px solid #0A0A0A;">{sighting['locationPrivate']}</td>
+                <td style="border: 1px solid #0A0A0A;">{sighting['obsValid']}</td>
                 <td style="border: 1px solid #0A0A0A;"><a href="{BASE_SUB_URL.format(sighting['subId'])}">eBird</a></td>
                 <td style="border: 1px solid #0A0A0A;"><a href="{mapsUrl}">Maps</a></td>
             </tr>"""
@@ -54,8 +56,6 @@ def createBirdRecords(records, lifers=[]):
     birds = {}
 
     for record in records:
-        if not record['obsValid']:
-            continue
         
         if record['speciesCode'] in lifers:
             continue
@@ -71,6 +71,7 @@ def createBirdRecords(records, lifers=[]):
                 'locId': record['locId'],
                 'coords': (record['lat'], record['lng']),
                 'locationPrivate': record['locationPrivate'],
+                'obsValid': record['obsValid'],
                 'subId': record['subId']
             }
         )
