@@ -192,3 +192,8 @@ bkbwar
 woewar1
 buhvir
 brnthr
+btnwar
+babwar
+camwar
+swathr
+buwwar
