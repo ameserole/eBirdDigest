@@ -53,7 +53,7 @@ brncre
 easwpw1
 robgro
 houwre
-warvir
+eawvir1
 chiswi
 fiespa
 bawwar
@@ -149,7 +149,7 @@ reevir1
 greegr
 whevir
 eawpew
-yelwar
+yelwar1
 easpho
 woothr
 easkin
@@ -243,3 +243,6 @@ rusbla
 purfin
 norwat
 leabit
+tenwar
+yetvir
+naswar
